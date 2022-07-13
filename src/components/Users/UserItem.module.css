@@ -1,0 +1,23 @@
+.userItem {
+  display: flex;
+  justify-content: space-between;
+  background-color: purple;
+  color: white;
+  margin-top: 6px;
+  border-radius: 2px;
+  padding: 2px 2px;
+}
+
+.userName,
+.userAge {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userName {
+  width: 65%;
+}
+.userAge {
+  width: 35%;
+}
