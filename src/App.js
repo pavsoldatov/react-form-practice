@@ -2,12 +2,10 @@ import React from "react";
 import styles from "./App.module.css";
 import InputForm from "./components/UI/InputForm";
 import UserList from "./components/Users/UserList";
-import { useState } from "react";
+import { useState, useCallback, useRef } from "react";
 
 function App() {
-  const [users, setUser] = useState([
-    { name: "Pav", age: "30", id: Math.random().toString() },
-  ]);
+  const [users, setUser] = useState([]);
 
   const inputsHandler = (userData) => {
     console.log(userData);
@@ -15,11 +13,19 @@ function App() {
       return [userData, ...prevState];
     });
   };
-  console.log(users);
+
+  const input = useRef(null);
+  const handleInputFocus = () => {
+    input.current.focus();
+  };
+
   return (
     <div className={styles.app}>
-      <InputForm onAddNewUser={inputsHandler} />
-      <UserList users={users} />
+      <InputForm
+        onAddNewUser={inputsHandler}
+        inputRef={input}
+      />
+      <UserList users={users} onAutofocusClick={handleInputFocus} />
     </div>
   );
 }

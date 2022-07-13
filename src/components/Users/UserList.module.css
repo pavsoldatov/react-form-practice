@@ -1,5 +1,13 @@
 .userList fieldset {
   border-radius: 6px;
   margin-top: 12px;
-  min-inline-size: auto ;
+  min-inline-size: auto;
+}
+
+.nothingFound {
+  text-align: center;
+}
+
+.nothingFound h4 {
+  margin-block-end: 8px;
 }

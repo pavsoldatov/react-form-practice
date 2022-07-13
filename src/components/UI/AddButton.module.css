@@ -1,0 +1,12 @@
+.authSubmit {
+  outline: none;
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  background-color: purple;
+  width: 100%;
+}
+
+.authSubmit:hover {
+  background-color: rgb(174, 3, 174);
+}

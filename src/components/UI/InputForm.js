@@ -1,5 +1,6 @@
 import styles from "./InputForm.module.css";
 import { useState } from "react";
+import AddButton from "./AddButton";
 
 const InputForm = (props) => {
   const [name, setName] = useState("");
@@ -41,6 +42,7 @@ const InputForm = (props) => {
           id="auth-name"
           value={name}
           onChange={changeNameHandler}
+          ref={props.inputRef}
         />
 
         <label htmlFor="auth-age">Age</label>
@@ -50,9 +52,7 @@ const InputForm = (props) => {
           value={age}
           onChange={changeAgeHandler}
         />
-        <button type="submit" className={styles.authSubmit}>
-          Add
-        </button>
+        <AddButton text={"Add"} />
       </fieldset>
     </form>
   );

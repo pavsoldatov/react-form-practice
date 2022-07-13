@@ -4,15 +4,3 @@
   gap: 8px;
   border-radius: 6px;
 }
-
-.authSubmit {
-  outline: none;
-  border: none;
-  color: white;
-  padding: 4px 0;
-  background-color: purple;
-}
-
-.authSubmit:hover {
-  background-color: rgb(174, 3, 174);
-}
