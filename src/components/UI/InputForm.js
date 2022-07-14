@@ -16,10 +16,12 @@ const InputForm = (props) => {
 
     if (name === "") {
       alert("Please enter a name");
+      props.onNameAutofocus();
       return;
     }
     if (age < 1) {
       alert("Please enter a number greater than 0");
+      props.onAgeAutofocus();  
       return;
     }
 
@@ -42,7 +44,7 @@ const InputForm = (props) => {
           id="auth-name"
           value={name}
           onChange={changeNameHandler}
-          ref={props.inputRef}
+          ref={props.nameInputRef}
         />
 
         <label htmlFor="auth-age">Age</label>
@@ -51,6 +53,7 @@ const InputForm = (props) => {
           id="auth-age"
           value={age}
           onChange={changeAgeHandler}
+          ref={props.ageInputRef}
         />
         <AddButton text={"Add"} />
       </fieldset>
