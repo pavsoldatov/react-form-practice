@@ -6,7 +6,7 @@ const UserList = (props) => {
   const users = props.users;
   console.log(users);
 
-  if (users.length === 0) {
+  if (users.length <= 0) {
     return (
       <div className={styles.nothingFound}>
         <h4>No user found.</h4>
@@ -18,6 +18,8 @@ const UserList = (props) => {
     );
   }
 
+  const getUserID = (id) => props.onDeleteUserByID(id);
+
   return (
     <div className={styles.userList}>
       <fieldset>
@@ -28,6 +30,7 @@ const UserList = (props) => {
             age={user.age}
             id={user.id}
             key={user.id}
+            onGetUserID={getUserID}
           />
         ))}
       </fieldset>

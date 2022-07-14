@@ -8,16 +8,14 @@
   padding: 2px 2px;
 }
 
+.userItem:hover {
+  background-color: rgb(174, 3, 174);
+  cursor: pointer;
+}
+
 .userName,
 .userAge {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.userName {
-  width: 65%;
-}
-.userAge {
-  width: 35%;
 }

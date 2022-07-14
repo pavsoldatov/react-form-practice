@@ -13,6 +13,9 @@ function App() {
       return [userData, ...prevState];
     });
   };
+  const deleteUserHandler = (id) => {
+    setUser(users.filter((user) => user.id !== id));
+  };
 
   const nameInput = useRef(null);
   const ageInput = useRef(null);
@@ -28,7 +31,11 @@ function App() {
         onNameAutofocus={handleNameFocus}
         onAgeAutofocus={handleAgeFocus}
       />
-      <UserList users={users} onAutofocusClick={handleNameFocus} />
+      <UserList
+        users={users}
+        onAutofocusClick={handleNameFocus}
+        onDeleteUserByID={deleteUserHandler}
+      />
     </div>
   );
 }
